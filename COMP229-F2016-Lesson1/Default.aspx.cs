@@ -9,9 +9,12 @@ namespace COMP229_F2016_Lesson1
 {
     public partial class _Default : Page
     {
+        /*
+        
+        */
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            HelloLabel.Text = "Good Bye!";
         }
     }
 }
