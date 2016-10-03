@@ -1,4 +1,13 @@
-﻿No. 7
+﻿No. 6
+select * from crimes where crime_id in (
+select crime_id from crime_charges
+where fine_amount > 
+(select AVG(fine_amount) from crime_charges)
+and
+amount_paid < (select AVG(amount_paid) from crime_charges));
+
+
+No. 7
 --new solution
 select last, first
 from criminals join crimes using (criminal_id)
