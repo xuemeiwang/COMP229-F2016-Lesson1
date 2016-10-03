@@ -1,4 +1,18 @@
-﻿No. 6
+﻿No. 4
+select last, first
+from prob_officers where prob_id in (
+select prob_id from (
+select prob_id, count(*) c, (select AVG(count(*))
+from sentences
+where type = 'P'
+group by prob_id) a
+from sentences
+where type = 'P'
+group by prob_id)
+where c < a);
+
+
+No. 6
 select * from crimes where crime_id in (
 select crime_id from crime_charges
 where fine_amount > 
